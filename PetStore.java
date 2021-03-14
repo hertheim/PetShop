@@ -34,35 +34,35 @@ public class PetStore{
      * Adds the object to the arraylist animals.
      */
     public void addMamal(String name, String species, int price, String birthday, int gestationPeriod, int litterAverage){
-         Animal animal = new Mammal(name, species, price, birthday, gestationPeriod, litterAverage);
-         animals.add(animal);
+        Animal animal = new Mammal(name, species, price, birthday, gestationPeriod, litterAverage);
+        animals.add(animal);
     }
-    
+
     /**
      * Creates Fish object.
      * Adds the object to the arraylist animals.
      */
     public void addFish(String name, String species, int price, String birthday, int depth, int waterTemperature){
-         Animal animal = new Fish(name, species, price, birthday, depth, waterTemperature);
-         animals.add(animal);
+        Animal animal = new Fish(name, species, price, birthday, depth, waterTemperature);
+        animals.add(animal);
     }
-    
+
     /**
      * Creates Bird object.
      * Adds the object to the arraylist animals.
      */
     public void addBird(String name, String species, int price, String birthday, int wingspan, String color){
-         Animal animal = new Bird(name, species, price, birthday, wingspan, color);
-         animals.add(animal);
+        Animal animal = new Bird(name, species, price, birthday, wingspan, color);
+        animals.add(animal);
     }
-    
+
     /**
      * Prints storeName & adress.
      */
     private void getInfo(){
         System.out.println("Store name: " + storeName + "\nAdress: " + adress);
     }
-    
+
     public void animalTest(){
         Animal animal;
         // create new animals
@@ -74,7 +74,7 @@ public class PetStore{
         animals.add(animal = new Bird("Pip", "Bird", 500, "01.01.2021", 20, "Blue"));
         animals.add(animal = new Fish("Bob", "Fish", 200, "04.02.2021", 15, 24));
     }
-    
+
     /**
      * Returns size of animals list.
      */
@@ -92,7 +92,7 @@ public class PetStore{
             return true;
         }
     }
-    
+
     /**
      * Creates a headder for printing of lists.
      */
@@ -116,7 +116,7 @@ public class PetStore{
                 if(Fish.class.isInstance(animal)){
                     System.out.println(animal.getFishDescription());
                 }
-            }
+            }   
             System.out.println("Number of animals: " + getListSize());
         }else{
             System.out.println("There are no animals in the store."); 
@@ -132,15 +132,23 @@ public class PetStore{
         int listSize = 0;
         for(Animal animal : animals){
             if(price > animal.getPrice()){
+                if(Mammal.class.isInstance(animal)){
+                    System.out.println(animal.getMammalDescription());
+                }
+                if(Bird.class.isInstance(animal)){
+                    System.out.println(animal.getBirdDescription());
+                }
+                if(Fish.class.isInstance(animal)){
+                    System.out.println(animal.getFishDescription());
+                }
                 listSize += 1;
-                System.out.println(animal.getAnimalDescription());
             }         
         }
 
-        if(listSize <= 0){
+        if(!Animal.class.isInstance(animal)){
             System.out.println("No animals with price under " + price + "."); 
         }else{
-            System.out.println("Number of animals: " + listSize + ".");
+            System.out.println("Number of animals: " + listSize);
         }
     }
 
@@ -153,12 +161,20 @@ public class PetStore{
         int listSize = 0;
         for(Animal animal : animals){
             if(animal.getSpecies().equals(species)){
+                if(Mammal.class.isInstance(animal)){
+                    System.out.println(animal.getMammalDescription());
+                }
+                if(Bird.class.isInstance(animal)){
+                    System.out.println(animal.getBirdDescription());
+                }
+                if(Fish.class.isInstance(animal)){
+                    System.out.println(animal.getFishDescription());
+                }
                 listSize += 1;
-                System.out.println(animal.getAnimalDescription());
             }
         }
 
-        if(listSize <= 0){
+        if(!Animal.class.isInstance(animal)){
             System.out.println("There are no animals of the species " + species + "."); 
         }else{
             System.out.println("Number of animals: " + listSize);
