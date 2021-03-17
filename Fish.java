@@ -23,8 +23,9 @@ public class Fish extends Animal{
         return waterTemperature;
     }
     
-    @Override public String getFishDescription(){
-        return (super.getFishDescription() +"\nAdditional info: Optimal depth: " + 
+    @Override 
+    public String getAnimalDescription(){
+        return (super.getAnimalDescription() +"\nAdditional info: Optimal depth: " + 
         depth + "cm\tWater temperature: " + waterTemperature + "°C\n");
     }
 }

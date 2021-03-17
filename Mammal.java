@@ -22,8 +22,9 @@ public class Mammal extends Animal{
         return litterAverage;
     }
   
-    @Override public String getMammalDescription(){
-        return (super.getMammalDescription() +"\nAdditional info: Gestation period: " + 
+    @Override 
+    public String getAnimalDescription(){
+        return (super.getAnimalDescription() +"\nAdditional info: Gestation period: " + 
         gestationPeriod + "\tLitter average: " + litterAverage + "\n");
     }
 }

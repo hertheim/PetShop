@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Animal here.
  *
@@ -22,7 +21,7 @@ public class Animal{
         this.name = name;
         this.species = species;
         this.birthday = birthday;
-        this.price = price; 
+        this.price = price;
     }
     
     /**
@@ -58,20 +57,5 @@ public class Animal{
      */
     public String getAnimalDescription(){
         return "Species: " + species + "\tName: " + name + "\tPrice: " + price + "\tBirthday: " + birthday;    
-    }
-    
-    /**
-     * 
-     */
-    public String getMammalDescription(){
-        return getAnimalDescription();    
-    }
-    
-    public String getBirdDescription(){
-        return getAnimalDescription();
-    }
-    
-    public String getFishDescription(){
-        return getAnimalDescription();
     }
 }

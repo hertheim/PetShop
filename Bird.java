@@ -23,8 +23,9 @@ public class Bird extends Animal{
         return color;
     }
     
-    @Override public String getBirdDescription(){
-        return (super.getBirdDescription() +"\nAdditional info: Wingspan: " + 
-        wingspan + "cm\tColor: " + color + "\n");
+    @Override 
+    public String getAnimalDescription(){
+        return (super.getAnimalDescription() +"\nAdditional info: Wingspan: " + 
+        wingspan + "cm" + "\tColor: " + color + "\n");
     }
 }
